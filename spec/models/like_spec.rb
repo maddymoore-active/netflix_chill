@@ -4,6 +4,8 @@ RSpec.describe Like, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:movie) }
+
     it { should belong_to(:show) }
 
     it { should belong_to(:user) }
