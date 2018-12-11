@@ -4,34 +4,24 @@
 
 <hr>
 
-<!-- Form movie start -->
 <form action="/update_movie/<%= @movie.id %>" method="post" enctype="multipart/form-data">
-<!-- Form movie end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control" value="<%= @movie.title %>">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for image start -->
   <div class="form-group">
     <label for="image">
       Image
     </label>
 
-    <!-- Input for image start -->
     <%= cl_image_tag(@movie.image.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="image" name="image" class="form-control">
-    <!-- Input for image end -->
   </div>
-  <!-- Label and input for image end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update movie

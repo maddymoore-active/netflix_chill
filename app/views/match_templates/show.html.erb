@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link match start -->
       <div class="col">
         <a href="/matches/<%= @match.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit match
         </a>
       </div>
-      <!-- Edit link match end -->
 
-      <!-- Delete link match start -->
       <div class="col">
         <a href="/delete_match/<%= @match.id %>" class="btn btn-block btn-outline-secondary">
           Delete match
         </a>
       </div>
-      <!-- Delete link match end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @match.user.present? %>
           <a href="/users/<%= @match.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Other
       </dt>
-      <!-- Display other_id start -->
       <dd>
         <% if @match.other.present? %>
           <a href="/users/<%= @match.other_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display other_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@match.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@match.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

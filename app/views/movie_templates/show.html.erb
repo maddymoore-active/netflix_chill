@@ -11,67 +11,53 @@
         </a>
       </div>
 
-      <!-- Edit link movie start -->
       <div class="col">
         <a href="/movies/<%= @movie.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit movie
         </a>
       </div>
-      <!-- Edit link movie end -->
 
-      <!-- Delete link movie start -->
       <div class="col">
         <a href="/delete_movie/<%= @movie.id %>" class="btn btn-block btn-outline-secondary">
           Delete movie
         </a>
       </div>
-      <!-- Delete link movie end -->
     </div>
 
     <dl>
       <dt>
         Title
       </dt>
-      <!-- Display title start -->
       <dd>
         <%= @movie.title %>
       </dd>
-      <!-- Display title end -->
 
       <dt>
         Image
       </dt>
-      <!-- Display image start -->
       <dd>
         <img src="<%= @movie.image %>" class="img-fluid">
       </dd>
-      <!-- Display image end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@movie.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@movie.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "movie_templates/movie_likes" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

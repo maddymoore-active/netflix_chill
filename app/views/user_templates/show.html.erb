@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link user start -->
       <div class="col">
         <a href="/users/<%= @user.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit user
         </a>
       </div>
-      <!-- Edit link user end -->
 
     </div>
 
@@ -25,90 +23,71 @@
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @user.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Bio
       </dt>
-      <!-- Display bio start -->
       <dd>
         <%= @user.bio %>
       </dd>
-      <!-- Display bio end -->
 
       <dt>
         Picture
       </dt>
-      <!-- Display picture start -->
       <dd>
         <img src="<%= @user.picture %>" class="img-fluid">
       </dd>
-      <!-- Display picture end -->
 
       <dt>
         Location
       </dt>
-      <!-- Display location start -->
       <dd>
         <div>
           <%= render partial: "user_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display location end -->
 
       <dt>
         Instagram
       </dt>
-      <!-- Display instagram start -->
       <dd>
         <%= @user.instagram %>
       </dd>
-      <!-- Display instagram end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @user.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @user.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@user.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@user.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "user_templates/user_likes" %>
@@ -126,4 +105,3 @@
     <%= render partial: "user_templates/user_matches_b" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @like.present? %>
   <% if @like.errors.any? %>
     <% @like.errors.full_messages.each do |message| %>
@@ -16,39 +15,25 @@
 
 <hr>
 
-<!-- Form like start -->
 <form action="/create_like" method="post">
-<!-- Form like end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for movie_id start -->
   <div class="form-group">
     <label for="movie_id">
       Movie
     </label>
 
-    <!-- Input for movie_id start -->
     <%= select_tag(:movie_id, options_from_collection_for_select(Movie.all, :id, :title, @like.movie_id), :class => "form-control") %>
-    <!-- Input for movie_id end -->
   </div>
-  <!-- Label and input for movie_id end -->
 
-  <!-- Label and input for show_id start -->
   <div class="form-group">
     <label for="show_id">
       Show
     </label>
 
-    <!-- Input for show_id start -->
     <%= select_tag(:show_id, options_from_collection_for_select(Show.all, :id, :name, @like.show_id), :class => "form-control") %>
-    <!-- Input for show_id end -->
   </div>
-  <!-- Label and input for show_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create like
