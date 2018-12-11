@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :matches_b,
+             :class_name => "Match",
+             :dependent => :destroy
+
   has_many   :matches_a,
              :class_name => "Match",
              :foreign_key => "other_id",
