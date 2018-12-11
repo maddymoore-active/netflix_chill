@@ -23,7 +23,7 @@ class ShowsController < ApplicationController
 
     @show.name = params.fetch("name")
     @show.title = params.fetch("title")
-    @show.image = params.fetch("image")
+    @show.image = params.fetch("image") if params.key?("image")
 
     if @show.valid?
       @show.save
@@ -45,7 +45,7 @@ class ShowsController < ApplicationController
 
     @show.name = params.fetch("name")
     @show.title = params.fetch("title")
-    @show.image = params.fetch("image")
+    @show.image = params.fetch("image") if params.key?("image")
 
     if @show.valid?
       @show.save

@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new
 
     @movie.title = params.fetch("title")
-    @movie.image = params.fetch("image")
+    @movie.image = params.fetch("image") if params.key?("image")
 
     if @movie.valid?
       @movie.save
@@ -43,7 +43,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params.fetch("id_to_modify"))
 
     @movie.title = params.fetch("title")
-    @movie.image = params.fetch("image")
+    @movie.image = params.fetch("image") if params.key?("image")
 
     if @movie.valid?
       @movie.save
