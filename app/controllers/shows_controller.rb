@@ -1,6 +1,7 @@
 class ShowsController < ApplicationController
   def index
-    @shows = Show.page(params[:page]).per(10)
+    @q = Show.ransack(params[:q])
+    @shows = @q.result(:distinct => true).includes(:likes).page(params[:page]).per(10)
 
     render("show_templates/index.html.erb")
   end
