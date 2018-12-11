@@ -62,19 +62,31 @@
 
         <!-- Display like.user_id start -->
         <td>
-          <%= like.user.created_at %>
+          <% if like.user.present? %>
+            <a href="/users/<%= like.user.id %>">
+              <%= like.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display like.user_id end -->
 
         <!-- Display like.movie_id start -->
         <td>
-          <%= like.movie.title %>
+          <% if like.movie.present? %>
+            <a href="/movies/<%= like.movie.id %>">
+              <%= like.movie.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display like.movie_id end -->
 
         <!-- Display like.show_id start -->
         <td>
-          <%= like.show.name %>
+          <% if like.show.present? %>
+            <a href="/shows/<%= like.show.id %>">
+              <%= like.show.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display like.show_id end -->
 

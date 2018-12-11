@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @like.user_id %>
+        <% if @like.user.present? %>
+          <a href="/users/<%= @like.user_id %>">
+            <%= @like.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display movie_id start -->
       <dd>
-        <%= @like.movie_id %>
+        <% if @like.movie.present? %>
+          <a href="/movies/<%= @like.movie_id %>">
+            <%= @like.movie.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display movie_id end -->
 
@@ -56,7 +64,11 @@
       </dt>
       <!-- Display show_id start -->
       <dd>
-        <%= @like.show_id %>
+        <% if @like.show.present? %>
+          <a href="/shows/<%= @like.show_id %>">
+            <%= @like.show.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display show_id end -->
 

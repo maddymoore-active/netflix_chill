@@ -58,13 +58,21 @@
 
         <!-- Display match.user_id start -->
         <td>
-          <%= match.user.created_at %>
+          <% if match.user.present? %>
+            <a href="/users/<%= match.user.id %>">
+              <%= match.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display match.user_id end -->
 
         <!-- Display match.other_id start -->
         <td>
-          <%= match.other.created_at %>
+          <% if match.other.present? %>
+            <a href="/users/<%= match.other.id %>">
+              <%= match.other.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display match.other_id end -->
 

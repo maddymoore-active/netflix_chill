@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @match.user_id %>
+        <% if @match.user.present? %>
+          <a href="/users/<%= @match.user_id %>">
+            <%= @match.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display other_id start -->
       <dd>
-        <%= @match.other_id %>
+        <% if @match.other.present? %>
+          <a href="/users/<%= @match.other_id %>">
+            <%= @match.other.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display other_id end -->
 
