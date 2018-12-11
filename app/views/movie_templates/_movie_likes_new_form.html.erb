@@ -1,0 +1,37 @@
+<!-- Form like start -->
+<form action="/create_like_from_movie" method="post">
+<!-- Form like end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @like.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for movie_id start -->
+  <!-- Input for movie_id start -->
+  <input type="hidden" name="movie_id" value="<%= @movie.id %>">
+  <!-- Input for movie_id end -->
+
+  <!-- Label and input for show_id start -->
+  <div class="form-group">
+    <label for="show_id">
+      Show
+    </label>
+
+    <!-- Input for show_id start -->
+    <input type="text" id="show_id" name="show_id" class="form-control" value="<%= @like.show_id %>">
+    <!-- Input for show_id end -->
+  </div>
+  <!-- Label and input for show_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create like
+  </button>
+</form>

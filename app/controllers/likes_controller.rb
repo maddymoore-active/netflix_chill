@@ -33,6 +33,38 @@ class LikesController < ApplicationController
     end
   end
 
+  def create_row_from_show
+    @like = Like.new
+
+    @like.user_id = params.fetch("user_id")
+    @like.movie_id = params.fetch("movie_id")
+    @like.show_id = params.fetch("show_id")
+
+    if @like.valid?
+      @like.save
+
+      redirect_to("/shows/#{@like.show_id}", notice: "Like created successfully.")
+    else
+      render("like_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_movie
+    @like = Like.new
+
+    @like.user_id = params.fetch("user_id")
+    @like.movie_id = params.fetch("movie_id")
+    @like.show_id = params.fetch("show_id")
+
+    if @like.valid?
+      @like.save
+
+      redirect_to("/movies/#{@like.movie_id}", notice: "Like created successfully.")
+    else
+      render("like_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @like = Like.find(params.fetch("prefill_with_id"))
 
