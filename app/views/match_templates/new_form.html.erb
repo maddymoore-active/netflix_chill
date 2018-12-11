@@ -1,0 +1,45 @@
+<h1>
+  Add a new match
+</h1>
+
+
+<hr>
+
+<!-- Form match start -->
+<form action="/create_match" method="post">
+<!-- Form match end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for other_id start -->
+  <div class="form-group">
+    <label for="other_id">
+      Other
+    </label>
+
+    <!-- Input for other_id start -->
+    <input type="text" id="other_id" name="other_id" class="form-control">
+    <!-- Input for other_id end -->
+  </div>
+  <!-- Label and input for other_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create match
+  </button>
+</form>
+
+<hr>
+
+<a href="/matches">
+  Go back
+</a>
