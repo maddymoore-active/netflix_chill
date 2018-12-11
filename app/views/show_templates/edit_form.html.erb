@@ -1,0 +1,56 @@
+<h1>
+  Edit show #<%= @show.id %>
+</h1>
+
+<hr>
+
+<!-- Form show start -->
+<form action="/update_show/<%= @show.id %>" method="post">
+<!-- Form show end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @show.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <!-- Input for title start -->
+    <input type="text" id="title" name="title" class="form-control" value="<%= @show.title %>">
+    <!-- Input for title end -->
+  </div>
+  <!-- Label and input for title end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <!-- Input for image start -->
+    <input type="text" id="image" name="image" class="form-control" value="<%= @show.image %>">
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update show
+  </button>
+</form>
+
+<hr>
+
+<a href="/shows">
+  Go back
+</a>
