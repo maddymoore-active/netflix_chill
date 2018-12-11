@@ -53,6 +53,22 @@ class MatchesController < ApplicationController
     end
   end
 
+  def destroy_row_from_other
+    @match = Match.find(params.fetch("id_to_remove"))
+
+    @match.destroy
+
+    redirect_to("/users/#{@match.other_id}", notice: "Match deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @match = Match.find(params.fetch("id_to_remove"))
+
+    @match.destroy
+
+    redirect_to("/users/#{@match.user_id}", notice: "Match deleted successfully.")
+  end
+
   def destroy_row
     @match = Match.find(params.fetch("id_to_remove"))
 
